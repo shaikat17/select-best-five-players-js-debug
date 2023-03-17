@@ -46,11 +46,15 @@ function getValueOfElement(elementId, value){
     element.innerText = value;
 }
 
-
+// reset input field
+function resetInput(inputID) {
+    document.getElementById(inputID).value = ''
+}
 
 // Budgets add event listeners
 document.getElementById('calculate_budget').addEventListener('click', function(){
     const perPlayerBudget = getInputValue('per_player_budget');
+    resetInput("per_player_budget");
     let totalPlayerExpense =  perPlayerBudget * 5;
     getValueOfElement( 'player_expense', totalPlayerExpense)  
 })
@@ -58,7 +62,9 @@ document.getElementById('calculate_total_budget').addEventListener('click', func
     const perPlayerBudget = document.getElementById('player_expense');
     const playerTotalBudget = parseFloat(perPlayerBudget.innerText)
     const managerBudget = getInputValue('manager_budget');
+    resetInput("manager_budget");
     const coachBudget = getInputValue('coach_budget');
+    resetInput("coach_budget");
 
     let totalExpense = playerTotalBudget + managerBudget + coachBudget;
         getValueOfElement( 'player_total_expense', totalExpense)
