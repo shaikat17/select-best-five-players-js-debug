@@ -17,7 +17,7 @@ for(const button of buttons){
             addPlayer(button.parentNode.children[0].innerText);
         } else{
             button.classList.remove('disabled');
-            addPlayer(button.parentNode.children[0].innerText)
+            // addPlayer(button.parentNode.children[0].innerText)
             alert('5 Played already Selected');
         }
     })
@@ -25,6 +25,7 @@ for(const button of buttons){
 
 // A common function for getInput value
 function getInputValue(inputId){
+    // console.log(selectedPlayer.children.length)
     const inputField = document.getElementById(inputId);
     const inputFieldValue = inputField.value;
     return inputFieldValue
