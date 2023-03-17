@@ -26,9 +26,19 @@ for(const button of buttons){
 // A common function for getInput value
 function getInputValue(inputId){
     // console.log(selectedPlayer.children.length)
+    
+    if(selectedPlayer.children.length < 5) {
+        alert("Please, select 5 players!!!")
+        return 0;
+    }
     const inputField = document.getElementById(inputId);
     const inputFieldValue = inputField.value;
-    return inputFieldValue
+    if (isNaN(parseFloat(inputFieldValue))) {
+    //   console.log(inputFieldValue);
+      alert('Please, Enter a valid number.')
+      return 0;
+    }
+    return parseFloat(inputFieldValue)
 };
 
 function getValueOfElement(elementId, value){
