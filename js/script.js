@@ -33,11 +33,12 @@ function getInputValue(inputId){
     }
     const inputField = document.getElementById(inputId);
     const inputFieldValue = inputField.value;
-    if (isNaN(parseFloat(inputFieldValue))) {
+    if (isNaN(parseFloat(inputFieldValue)) || parseFloat(inputFieldValue) < 0) {
     //   console.log(inputFieldValue);
-      alert('Please, Enter a valid number.')
+      alert('Please, Enter a valid positive number.')
       return 0;
     }
+
     return parseFloat(inputFieldValue)
 };
 
